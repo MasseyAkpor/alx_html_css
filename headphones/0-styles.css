@@ -1,0 +1,340 @@
+/* Custom properties for easy color/font management */
+:root {
+    --color-dark-blue: #0A1428;
+    --color-dark-text: #333;
+    --color-white: #fff;
+    --color-red: #D63031;
+    --color-light-gray: #f9f9f9;
+    --color-gray-text: #ccc;
+    --font-primary: 'Arial', sans-serif; /* Using a common font since the exact font is unknown */
+}
+
+/* Base Reset & Typography */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--font-primary);
+    line-height: 1.6;
+    color: var(--color-dark-text);
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* --- Utility Classes --- */
+.section-title {
+    text-align: center;
+    font-size: 2.5em;
+    font-weight: 300;
+    margin-bottom: 0.5em;
+}
+
+.section-description {
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto 40px;
+    line-height: 1.8;
+}
+
+.btn {
+    display: inline-block;
+    padding: 12px 30px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    text-transform: uppercase;
+    transition: background-color 0.3s;
+    border: none;
+    cursor: pointer;
+}
+
+.btn-red {
+    background-color: var(--color-red);
+    color: var(--color-white);
+}
+
+.btn-red:hover {
+    background-color: #a82525;
+}
+
+
+/* --- 1. HERO SECTION (Header) --- */
+.hero-section {
+    background: url('headphones_hero_1.jpg') no-repeat center center/cover; /* Placeholder for the dynamic image */
+    position: relative;
+    padding-bottom: 100px;
+    color: var(--color-white);
+    text-align: center;
+    /* Dark overlay to match the image */
+    min-height: 700px;
+    display: flex;
+    flex-direction: column;
+}
+
+.hero-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.6); /* Semi-transparent black overlay */
+    z-index: 1;
+}
+
+.navbar, .hero-content {
+    position: relative;
+    z-index: 2;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 30px 20px;
+}
+
+/* --- Logo Styling (Update for DIV Container) --- */
+.logo-container {
+    display: flex; /* Aligns the icon and text horizontally */
+    align-items: center;
+}
+
+.logo-icon {
+    height: 1.5em; /* Match logo height to text size */
+    width: auto;
+    filter: brightness(0) invert(1); /* Makes a dark icon white (assuming placeholder is dark) */
+    margin-right: 8px; /* Space between icon and text */
+}
+
+.logo-text {
+    font-size: 1.5em;
+    font-weight: bold;
+    color: var(--color-white);
+}
+
+/* --- Navigation Links Styling (Update for UL/LI structure) --- */
+.navbar nav {
+    display: flex;
+    align-items: center;
+}
+
+.nav-links {
+    list-style: none; /* Remove bullet points */
+    display: flex; /* Make the list items align horizontally */
+    margin: 0;
+    padding: 0;
+}
+
+.nav-links li {
+    margin-left: 25px; /* Spacing between menu items */
+}
+
+.nav-links li a {
+    color: var(--color-white);
+    text-decoration: none;
+    font-size: 0.9em;
+    opacity: 0.7;
+}
+
+.nav-links li a:hover {
+    opacity: 1;
+}
+
+.hero-content {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-top: 50px;
+}
+
+.hero-title {
+    font-size: 3.5em;
+    max-width: 800px;
+    font-weight: 300;
+    margin-bottom: 20px;
+}
+
+.hero-subtitle {
+    max-width: 700px;
+    margin-bottom: 40px;
+    line-height: 1.8;
+    opacity: 0.9;
+    font-size: 0.95em;
+}
+
+/* --- 2. WHAT WE DO SECTION --- */
+.what-we-do-section {
+    padding: 80px 20px;
+    text-align: center;
+}
+
+.services-grid {
+    display: flex;
+    justify-content: space-between;
+    gap: 30px;
+    margin-top: 60px;
+}
+
+.service-card {
+    flex: 1;
+    padding: 20px;
+}
+
+.icon-box i {
+    font-size: 2.5em;
+    color: var(--color-red);
+    margin-bottom: 15px;
+}
+
+.card-title {
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.card-text {
+    font-size: 0.9em;
+    color: #666;
+}
+
+/* --- 3. OUR RESULTS SECTION --- */
+.results-section {
+    background: url('https://via.placeholder.com/1920x400/101010?text=BACKGROUND+DECORATION') no-repeat center center/cover;
+    background-color: var(--color-dark-blue);
+    color: var(--color-white);
+    padding: 100px 0;
+    text-align: center;
+    position: relative;
+}
+
+.results-title {
+    font-size: 2.5em;
+    font-weight: 300;
+    margin-bottom: 0.5em;
+    color: var(--color-white);
+}
+
+.results-description {
+    max-width: 800px;
+    margin: 0 auto 60px;
+    line-height: 1.8;
+    opacity: 0.9;
+}
+
+.results-grid {
+    display: flex;
+    justify-content: center;
+    gap: 50px;
+}
+
+.pentagon {
+    /* Custom pentagon shape using CSS clip-path */
+    width: 120px;
+    height: 120px;
+    background-color: var(--color-red);
+    clip-path: polygon(50% 0%, 100% 38%, 81% 100%, 19% 100%, 0% 38%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.8em;
+    font-weight: bold;
+}
+
+
+/* --- 4. CONTACT SECTION --- */
+.contact-section {
+    padding: 80px 20px;
+    background-color: var(--color-white);
+}
+
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    max-width: 500px;
+    margin: 0 auto;
+    gap: 15px;
+}
+
+.contact-form input,
+.contact-form textarea {
+    padding: 15px;
+    border: 1px solid var(--color-gray-text);
+    border-radius: 0; /* Remove default rounded borders */
+    font-family: inherit;
+    font-size: 1em;
+}
+
+.contact-form textarea {
+    resize: vertical;
+    min-height: 120px;
+}
+
+.contact-form button {
+    align-self: flex-end; /* Align button to the right */
+    padding: 15px 40px;
+    margin-top: 10px;
+}
+
+
+/* --- 5. FOOTER --- */
+.main-footer {
+    background-color: var(--color-dark-blue);
+    color: var(--color-white);
+    padding: 40px 0 20px;
+    text-align: center;
+}
+
+.main-footer .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 20px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.main-footer .logo-container {
+    /* Reusing the logo container structure for consistency */
+    display: flex;
+    align-items: center;
+}
+
+.main-footer .logo-icon {
+    /* Placeholder icon remains */
+    height: 1.2em;
+    width: auto;
+    margin-right: 8px;
+}
+
+.main-footer .logo-text {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: var(--color-white);
+    opacity: 0.8;
+}
+
+.social-links a {
+    color: var(--color-white);
+    font-size: 1.2em;
+    margin-left: 15px;
+    opacity: 0.6;
+    transition: opacity 0.3s;
+}
+
+.social-links a:hover {
+    opacity: 1;
+}
+
+.copyright {
+    font-size: 0.8em;
+    opacity: 0.5;
+    margin-top: 20px;
+}
